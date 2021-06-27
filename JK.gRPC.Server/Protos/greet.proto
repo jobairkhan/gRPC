@@ -1,0 +1,21 @@
+// There are 2 version of Protocol Buffers, proto2  and proto3. 
+// proto3 is the latest
+syntax = "proto3"; 
+
+// The namespcae in C#. Its a hint for the compiler 
+// which C# namesapce we should use to refer this file
+option csharp_namespace = "JK.gRPC.Server";
+
+// The greeting service definition.
+service Greeter {
+	// Method: Call this to Send a greeting
+	rpc SayHello (HelloRequest) returns (HelloReply);
+}
+// The request message containing the user's name.
+message HelloRequest {
+	string name = 1; //We are not assigning any value here. 1 is the ordinal number for the property
+}
+// The response message containing the greetings.
+message HelloReply {
+	string message = 1; //We are not assigning any value here. 1 is the ordinal number for the property
+}
